@@ -1,8 +1,16 @@
+import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
+import LandingPage from "./pages/LandingPage";
+
 function App() {
   return (
-    <>
-      <h1>Hello Web</h1>
-    </>
+    <div className="font-text">
+      <Header />
+      <main>
+        <LandingPage />
+      </main>
+      <Footer />
+    </div>
   );
 }
 

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "New York";
+    src: url("/assets/NewYork.ttf") format("truetype");
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "SF Pro Text";
+    src: url("/assets/SF-Pro-Text-Regular.otf") format("opentype");
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "SF Pro Text Bold";
+    src: url("/assets/SF-Pro-Text-Bold.otf") format("opentype");
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+  }
+}
