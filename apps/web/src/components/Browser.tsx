@@ -34,7 +34,9 @@ const BrowserExtensionLink: React.FC = () => {
             <TbBrandChrome className="size-6 mr-1" />
             Add to Browser
           </Button>
-          <p className="text-center text-xs text-gray-300">Chrome browsers</p>
+          <p className="text-center text-xs text-gray-300 mt-1 ">
+            Chrome browsers
+          </p>
         </div>
       );
     case "Firefox":
@@ -50,7 +52,7 @@ const BrowserExtensionLink: React.FC = () => {
             Add to Browser
           </Button>
 
-          <p className="text-center text-xs text-gray-300">
+          <p className="text-center text-xs text-gray-300 mt-1 ">
             Firefox based browsers
           </p>
         </div>

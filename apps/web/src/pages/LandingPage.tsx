@@ -27,29 +27,25 @@ export default LandingPage;
 // Jumbotron Section Component
 function Jumbotron() {
   return (
-    <section className="px-4 py-24 bg-neutral-900 text-neutral-50  w-full bg-grid-white/[0.2] relative grid place-items-center ">
-      <div className="absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+    <section className="px-4 py-24 bg-neutral-900 text-neutral-50  w-full bg-grid-white/[0.1] relative grid place-items-center ">
+      <div className="absolute pointer-events-none inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)]"></div>
       <div className="z-10 grid place-items-center mb-1">
-        <h1 className="font-display mb-5 text-4xl md:text-5xl lg:text-6xl dark:text-white">
+        <h1 className="font-display mb-4 text-4xl md:text-5xl lg:text-6xl dark:text-white">
           Hajimari Online
         </h1>
-        <p className="font-text p-1 rounded mb-9 text-lg font-normal text-neutral-900 lg:text-xl bg-neutral-50">
-          A dynamic, highly customizable, start page.
+        <p className="font-text p-1 rounded mb-8 text-xl font-normal text-neutral-50 lg:text-2xl ">
+          A dynamic, customizable, start page.
         </p>
         <div className="flex flex-col space-x-4 space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
           <div>
             <Browser />
           </div>
           <div>
-            <Button
-              isLink
-              href="https://addons.mozilla.org/en-US/firefox/addon/your-addon-id"
-              variant="default"
-            >
+            <Button isLink href="https://app.hajimari.online" variant="primary">
               <TbCircleArrowRight className="size-6 mr-1 filter group-hover:invert-0" />
               See It in Action
             </Button>
-            <p className="text-center text-xs text-gray-300">
+            <p className="text-center text-xs text-gray-300 mt-1 ">
               https://app.hajimari.online
             </p>
           </div>
@@ -73,39 +69,42 @@ function Quote() {
 function FeaturesSection() {
   const features = [
     {
-      icon: <TbSettings className="h-8 w-8 mb-2" />,
+      icon: <TbSettings className="h-8 w-8" />,
       title: "Easy Configuration",
       description:
         "Set up and modify your start page with a user-friendly interface.",
     },
     {
-      icon: <TbPalette className="h-8 w-8 mb-2" />,
+      icon: <TbPalette className="h-8 w-8 " />,
       title: "Themes & Styling",
       description:
         "Choose from various themes or create your own custom style.",
     },
     {
-      icon: <TbPhotoVideo className="h-8 w-8 mb-2" />,
+      icon: <TbPhotoVideo className="h-8 w-8" />,
       title: "Video Backgrounds",
-      description: "Arrange your widgets and links in any way you prefer.",
+      description:
+        "Choose from a selection of video backgrounds or upload your own.",
     },
 
     {
-      icon: <TbWorldSearch className="h-8 w-8 mb-2" />,
+      icon: <TbWorldSearch className="h-8 w-8" />,
       title: "Dynamic Web Search",
-      description: "Access your favorite sites and tools with just one click.",
+      description:
+        "Instantly search from your favorite engine without the extra steps",
     },
 
     {
-      icon: <TbBolt className="h-8 w-8 mb-2" />,
+      icon: <TbBolt className="h-8 w-8" />,
       title: "Fast Performance",
       description:
         "Enjoy a lightning-fast start page that loads in an instant.",
     },
     {
-      icon: <TbAccessible className="h-8 w-8 mb-2" />,
+      icon: <TbAccessible className="h-8 w-8" />,
       title: "Fully Accessible",
-      description: "Integrate with various productivity apps and services.",
+      description:
+        "Built with accessibility in mind, esuring everyone can enjoy it.",
     },
   ];
 
@@ -113,10 +112,10 @@ function FeaturesSection() {
     <section className="w-full  bg-background max-w-[800px] mx-auto">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <h2 className="text-3xl font-textBold  tracking-tighter sm:text-5xl">
+          <h3 className="text-3xl font-textBold  tracking-tighter sm:text-4xl">
             Features
-          </h2>
-          <p className="max-w-[900px] text-muted-foreground sm:text-xl/relaxed">
+          </h3>
+          <p className="max-w-[900px] text-muted-foreground sm:text-lg">
             Discover the powerful features that make our custom start page the
             perfect launchpad for your daily browsing.
           </p>
@@ -125,7 +124,7 @@ function FeaturesSection() {
           {features.map((feature, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle className="flex flex-col items-center gap-4">
+                <CardTitle className="flex flex-col items-center gap-4 font-textBold">
                   {feature.icon}
                   {feature.title}
                 </CardTitle>
