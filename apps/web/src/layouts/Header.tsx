@@ -1,25 +1,22 @@
-import { Navbar } from "flowbite-react";
-
 import logo from "../assets/Logo.png";
-import github from "../assets/github.svg";
-import language from "../assets/language.svg";
+import { TbBrandGithub, TbLanguageHiragana } from "react-icons/tb";
 
 const Header = () => {
   return (
     <header>
-      <Navbar fluid rounded>
-        <Navbar.Brand href="https://flowbite-react.com">
-          <img src={logo} className="mr-3 h-5" alt="Flowbite React Logo" />
-        </Navbar.Brand>
-        <div className="flex gap-3">
-          <button>
-            <img src={language} className="h-6" alt="" />
+      <nav className="flex items-center justify-between h-11 px-3">
+        <a href="https://flowbite-react.com">
+          <img src={logo} className="h-5" alt="Hajimari Online Logo" />
+        </a>
+        <div className="flex gap-1.5">
+          <button className="p-1.5">
+            <TbLanguageHiragana className="size-6" />
           </button>
-          <a className="flex gap-1" href="https://github.com/ashtonheald">
-            <img src={github} className="h-6" alt="" />
+          <a className="p-1.5" href="https://github.com/ashtonheald">
+            <TbBrandGithub className="size-6" />
           </a>
         </div>
-      </Navbar>
+      </nav>
     </header>
   );
 };

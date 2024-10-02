@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Button from "./ui/Button.tsx";
-import chrome from "../assets/chrome.svg";
-import firefox from "../assets/firefox.svg";
+import { Button } from "@/components/ui/button";
+import { TbBrandFirefox, TbBrandChrome } from "react-icons/tb";
 
 type BrowserType = "Chrome" | "Firefox" | "Other";
 
@@ -27,26 +26,31 @@ const BrowserExtensionLink: React.FC = () => {
       return (
         <div>
           <Button
-            className="bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600"
-            subClassName="bg-neutral-800"
+            isLink
             href="https://chrome.google.com/webstore/detail/your-extension-id"
-            src={chrome}
-            text="Add to Browser"
-          />
-          <p className="text-center text-sm text-gray-300">Chrome browsers</p>
+            className="bg-gradient-to-br from-green-400 to-blue-600"
+            variant="browser"
+          >
+            <TbBrandChrome className="size-6 mr-1" />
+            Add to Browser
+          </Button>
+          <p className="text-center text-xs text-gray-300">Chrome browsers</p>
         </div>
       );
     case "Firefox":
       return (
         <div>
           <Button
-            className="bg-gradient-to-br from-pink-500 to-orange-400 "
-            subClassName="bg-neutral-800"
+            isLink
             href="https://addons.mozilla.org/en-US/firefox/addon/your-addon-id"
-            src={firefox}
-            text="Add to Browser"
-          />
-          <p className="text-center text-sm text-gray-300">
+            className="bg-gradient-to-br from-pink-500 to-orange-400"
+            variant="browser"
+          >
+            <TbBrandFirefox className="size-6 mr-1" />
+            Add to Browser
+          </Button>
+
+          <p className="text-center text-xs text-gray-300">
             Firefox based browsers
           </p>
         </div>
