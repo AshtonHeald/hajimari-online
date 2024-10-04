@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Hajimari Online",
+  "version": "1.0.0-beta.1",
+  "description": "Hajimari Online is a customizable start page that replaces your default new tab with a sleek, personalized dashboard. Boost your online experience with a clean and organized interface designed for efficiency and ease.",
+  "author": "AshTheDev",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "64": "icons/hajimari-online.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs"],
+  "action": {
+    "default_icon": "icons/hajimari-online.png"
+  }
+}
