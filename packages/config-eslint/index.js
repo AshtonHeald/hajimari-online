@@ -37,7 +37,13 @@ export default tseslint.config(
     settings: { react: { version: "18.3" } },
     rules: {
       ...prettier.rules,
-      "prettier/prettier": "error",
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "auto",
+        },
+      ],
+
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
@@ -45,6 +51,7 @@ export default tseslint.config(
       ],
       ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
+      "react/prop-types": "off",
     },
-  }
+  },
 );
