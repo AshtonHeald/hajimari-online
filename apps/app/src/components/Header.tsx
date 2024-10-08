@@ -30,10 +30,13 @@ const Header = () => {
         justifyContent: "space-between",
         alignItems: "center",
         height: "60px",
+        position: "absolute",
+        top: "100px",
+        marginX: "auto",
       }}
     >
       <Typography
-        variant={"h4"}
+        variant={"h1"}
         gutterBottom
         sx={{
           display: "flex",
@@ -41,9 +44,10 @@ const Header = () => {
           mb: 0,
           fontWeight: "bold",
           position: "fixed",
+          fontSize: "3rem",
           width: "100%",
           "@media (max-width:810px)": {
-            fontSize: "1.6rem",
+            fontSize: "2rem",
           },
         }}
       >

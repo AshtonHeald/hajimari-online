@@ -13,7 +13,8 @@ const Footer = () => {
       }}
     >
       <Box sx={{ display: "flex", columnGap: "8px" }}>
-        <Link href="">Website</Link>|<Link href="">Source Code</Link>
+        <Link href="https://hajimari.online/">Website</Link>|
+        <Link href="">Source Code</Link>
       </Box>
       <span>Version 1.0.0-beta.1</span>
     </ListItem>

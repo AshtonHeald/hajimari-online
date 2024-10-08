@@ -5,7 +5,7 @@ import idbStorage from "../services/idbStorage";
 
 const DEFAULT_SETTINGS = {
   name: "",
-  color: "#000000",
+  color: "#00ffff",
   showGreeting: true,
 } as const;
 
