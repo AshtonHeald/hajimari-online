@@ -7,6 +7,8 @@ import { Icon } from "@iconify/react";
 import BasicSettings from "./BasicSettings";
 import ResetSettings from "./ResetSettings";
 import Footer from "../Footer";
+import EngineSettings from "./EngineSettings";
+import List from "@mui/material/List";
 
 interface SettingsProps {
   open: boolean;
@@ -30,13 +32,17 @@ const Settings: React.FC<SettingsProps> = ({ open, toggleDrawer }) => {
           }}
           sx={{ ml: "auto" }}
         >
-          <Icon icon="mdi:close" />
+          <Icon icon="tabler:x" />
         </IconButton>
       </Toolbar>
       <Divider />
       <Box sx={{ width: 250 }} role="presentation">
-        <BasicSettings />
+        <List>
+          <BasicSettings />
+          <EngineSettings />
+        </List>
       </Box>
+
       <Box sx={{ width: 250, marginTop: "auto" }} role="presentation">
         <ResetSettings />
         <Divider />

@@ -2,8 +2,6 @@
 import React from "react";
 import useSettingsStore from "../../stores/SettingsStore";
 import { MuiColorInput } from "mui-color-input";
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import TextField from "@mui/material/TextField";
 //import ListSubheader from "@mui/material/ListSubheader";
@@ -19,7 +17,13 @@ const Settings = () => {
     useSettingsStore();
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+    const value = e.target.value;
+    const isValidName = (input: string) =>
+      input.trim().length > 0 && input.length <= 20;
+
+    if (isValidName(value)) {
+      setName(value);
+    }
   };
 
   const handleColorChange = (newColor: string) => {
@@ -27,60 +31,65 @@ const Settings = () => {
   };
 
   return (
-    <Box sx={{ width: 250 }} role="presentation">
-      <List>
-        <ListItem>
-          <Paper
-            elevation={3}
+    <>
+      <ListItem>
+        <Paper
+          elevation={3}
+          sx={{
+            flexDirection: "row",
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+            borderRadius: "4px",
+          }}
+        >
+          <ListItemIcon
             sx={{
-              flexDirection: "row",
-              display: "flex",
-              alignItems: "center",
-              width: "100%",
-              borderRadius: "4px",
+              minWidth: "40px",
+              height: "40px",
+              display: "grid",
+              placeItems: "center",
             }}
           >
-            <ListItemIcon
-              sx={{
-                minWidth: "40px",
-                height: "40px",
-                display: "grid",
-                placeItems: "center",
-              }}
-            >
-              <Icon width={20} icon="tabler:mood-smile-beam" />
-            </ListItemIcon>
-            <ListItemText id="" primary="Greeting" />
-            <Switch
-              sx={{ mr: "0px" }}
-              edge="end"
-              onChange={toggleGreeting}
-              checked={showGreeting}
-              inputProps={{
-                "aria-labelledby": "",
-              }}
-            />
-          </Paper>
-        </ListItem>
-        <ListItem>
-          <TextField
-            id="name"
-            value={name}
-            label="Name"
-            variant="outlined"
-            onChange={handleNameChange}
+            <Icon width={20} icon="tabler:mood-smile-beam" />
+          </ListItemIcon>
+          <ListItemText id="" primary="Greeting" />
+          <Switch
+            sx={{ mr: "0px" }}
+            edge="end"
+            onChange={toggleGreeting}
+            checked={showGreeting}
+            inputProps={{
+              "aria-labelledby": "",
+            }}
           />
-        </ListItem>
-        <ListItem>
-          <MuiColorInput
-            label="Color"
-            title="Primary Color"
-            value={color}
-            onChange={handleColorChange}
-          />
-        </ListItem>
-      </List>
-      {/*<Divider />
+        </Paper>
+      </ListItem>
+      <ListItem>
+        <TextField
+          id="name"
+          value={name}
+          label="Name"
+          variant="outlined"
+          onChange={handleNameChange}
+        />
+      </ListItem>
+      <ListItem>
+        <MuiColorInput
+          label="Color"
+          title="Primary Color"
+          value={color}
+          onChange={handleColorChange}
+        />
+      </ListItem>
+    </>
+  );
+};
+
+export default Settings;
+
+{
+  /*<Divider />
       <List subheader={<ListSubheader>Language</ListSubheader>}>
         Language
       </List>
@@ -92,9 +101,5 @@ const Settings = () => {
       <List subheader={<ListSubheader>Search</ListSubheader>}>
         Search
       </List>
-      */}
-    </Box>
-  );
-};
-
-export default Settings;
+      */
+}

@@ -26,13 +26,11 @@ const Header = () => {
     <Box
       className="glass"
       sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        height: "60px",
+        top: "0",
         position: "absolute",
-        top: "100px",
         marginX: "auto",
+        width: "100%",
+        height: "60px",
       }}
     >
       <Typography
@@ -41,18 +39,23 @@ const Header = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
           mb: 0,
           fontWeight: "bold",
-          position: "fixed",
-          fontSize: "3rem",
-          width: "100%",
+          fontSize: "2.125rem",
           "@media (max-width:810px)": {
             fontSize: "2rem",
           },
         }}
       >
-        {greeting}
-        <Box sx={{ color: color }}>&nbsp;{name}</Box>
+        {name ? (
+          <>
+            {greeting},<Box sx={{ color: color }}>&nbsp;{name}</Box>
+          </>
+        ) : (
+          greeting
+        )}
       </Typography>
     </Box>
   );

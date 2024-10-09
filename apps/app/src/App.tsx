@@ -6,7 +6,9 @@ import Box from "@mui/material/Box";
 import useStore from "./stores/SettingsStore";
 import IconButton from "@mui/material/IconButton";
 import Settings from "./components/Settings";
+import Search from "./components/Search";
 import { Icon } from "@iconify/react";
+import "./app.css";
 
 function App() {
   const { color } = useStore();
@@ -27,10 +29,11 @@ function App() {
   };
 
   return (
-    <Box sx={{ height: "100vh" }}>
+    <Box sx={{ height: "100vh", display: "grid", placeItems: "center" }}>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Header />
+        <Search />
         <Settings open={open} toggleDrawer={toggleDrawer} />
         <Box sx={{ position: "fixed", bottom: "0", left: "0" }}>
           <IconButton
