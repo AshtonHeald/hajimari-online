@@ -87,19 +87,3 @@ const Settings = () => {
 };
 
 export default Settings;
-
-{
-  /*<Divider />
-      <List subheader={<ListSubheader>Language</ListSubheader>}>
-        Language
-      </List>
-      <Divider />
-      <List subheader={<ListSubheader>Background</ListSubheader>}>
-        Background
-      </List>
-      <Divider />
-      <List subheader={<ListSubheader>Search</ListSubheader>}>
-        Search
-      </List>
-      */
-}

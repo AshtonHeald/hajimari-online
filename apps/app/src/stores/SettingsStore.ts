@@ -2,25 +2,23 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import idbStorage from "../services/idbStorage";
-
-type SearchEngine = {
-  name: string;
-  url: string;
-};
-
-// Default Search Engines
-const SearchEngines = [
-  { name: "Google", url: "http://www.google.com/search?q=" },
-  { name: "Bing", url: "https://www.bing.com/search?q=" },
-  { name: "Yahoo", url: "https://search.yahoo.com/search?p=" },
-];
+import { SearchEngine, SearchEngines } from "../data/SearchEngines";
+import { Video, Videos } from "../data/Videos";
 
 const DEFAULT_SETTINGS = {
   name: "",
   color: "#00ffff",
   showGreeting: true,
+  // Engine Settings
   searchEngines: SearchEngines,
   searchEngine: SearchEngines[0],
+  // Video settings
+  videos: Videos,
+  video: Videos[0],
+  videoSettings: {
+    autoPlay: true,
+    keyProp: 0,
+  },
 } as const;
 
 type SettingsStore = {
@@ -38,6 +36,19 @@ type SettingsStore = {
   setDefaultEngine: (engine: SearchEngine) => void;
   // Reset all settings
   resetSettings: () => void;
+
+  // test
+  videos: Video[];
+  video: Video;
+  videoSettings: {
+    autoPlay: boolean;
+
+    keyProp: number;
+  };
+
+  setVideo: (video: Video) => void;
+  toggleAutoPlay: () => void;
+  refreshVideo: () => void;
 };
 
 const useSettingsStore = create<SettingsStore>()(
@@ -60,6 +71,32 @@ const useSettingsStore = create<SettingsStore>()(
       },
       setDefaultEngine: (engine: SearchEngine) => {
         set(() => ({ searchEngine: engine })); // Persist the default engine
+      },
+      // Video background actions
+      setVideo: (video: Video) => {
+        set((state) => ({
+          video,
+          videoSettings: {
+            ...state.videoSettings,
+            keyProp: state.videoSettings.keyProp + 1, // Increment key to force re-render
+          },
+        }));
+      },
+      toggleAutoPlay: () => {
+        set((state) => ({
+          videoSettings: {
+            ...state.videoSettings,
+            autoPlay: !state.videoSettings.autoPlay,
+          },
+        }));
+      },
+      refreshVideo: () => {
+        set((state) => ({
+          videoSettings: {
+            ...state.videoSettings,
+            keyProp: state.videoSettings.keyProp + 1,
+          },
+        }));
       },
       // Reset to default settings
       resetSettings: () => {

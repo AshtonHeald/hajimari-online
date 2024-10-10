@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import Settings from "./components/Settings";
 import Search from "./components/Search";
 import { Icon } from "@iconify/react";
+import Background from "./components/Background";
 import "./app.css";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
     <Box sx={{ height: "100vh", display: "grid", placeItems: "center" }}>
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
+        <Background />
         <Header />
         <Search />
         <Settings open={open} toggleDrawer={toggleDrawer} />

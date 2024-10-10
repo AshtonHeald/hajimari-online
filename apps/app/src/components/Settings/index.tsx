@@ -4,11 +4,12 @@ import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
 import Divider from "@mui/material/Divider";
 import { Icon } from "@iconify/react";
+import List from "@mui/material/List";
 import BasicSettings from "./BasicSettings";
 import ResetSettings from "./ResetSettings";
-import Footer from "../Footer";
 import EngineSettings from "./EngineSettings";
-import List from "@mui/material/List";
+import BackgroundSettings from "./BackgroundSettings";
+import Footer from "../Footer";
 
 interface SettingsProps {
   open: boolean;
@@ -40,6 +41,7 @@ const Settings: React.FC<SettingsProps> = ({ open, toggleDrawer }) => {
         <List>
           <BasicSettings />
           <EngineSettings />
+          <BackgroundSettings />
         </List>
       </Box>
 
