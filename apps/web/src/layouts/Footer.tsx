@@ -1,4 +1,4 @@
-import logo from "../assets/Logo-square.png";
+import Logo from "../assets/Logo-Square.png";
 import { TbBrandGithub, TbBrandX } from "react-icons/tb";
 import { Button } from "@/components/ui/button";
 
@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-neutral-900 text-neutral-50 px-3 ">
       <div className="flex items-center justify-between py-2.5">
         <div className="flex items-end space-x-2 w-48">
-          <img src={logo} className="mb-1 h-10" alt="Hajimari Online Logo" />
+          <img src={Logo} className="mb-1 h-10" alt="Hajimari Online Logo" />
           <div className="flex flex-col">
             <span className="text-lg font-textBold">Hajimari Online</span>
             <span className="text-sm text-muted-foreground">
