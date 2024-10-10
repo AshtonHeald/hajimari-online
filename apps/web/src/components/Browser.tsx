@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { TbBrandFirefox, TbBrandChrome } from "react-icons/tb";
 
 type BrowserType = "Chrome" | "Firefox" | "Other";
