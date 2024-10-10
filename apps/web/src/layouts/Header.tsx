@@ -1,6 +1,6 @@
 import logo from "../assets/Logo.png";
 import { TbBrandGithub, TbLanguageHiragana } from "react-icons/tb";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 const Header = () => {
   return (
