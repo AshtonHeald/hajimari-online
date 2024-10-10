@@ -1,6 +1,6 @@
 import Logo from "../assets/Logo-Square.png";
 import { TbBrandGithub, TbBrandX } from "react-icons/tb";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 const Footer = () => {
   return (
